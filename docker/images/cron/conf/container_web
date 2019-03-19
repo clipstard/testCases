@@ -1,0 +1,2 @@
+# WARNING : leave an empty line at the end of this file (required to be a valid cron file)
+30 8 * * *  www-data /usr/bin/php /symfony/bin/console app:cron:daily --no-debug > /symfony/var/logs/daily.output.log 2>/symfony/var/logs/daily.error.log

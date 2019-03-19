@@ -1,0 +1,1 @@
+30 8 * * *  /usr/local/bin/php /symfony/bin/console app:cron:daily --no-debug  > /symfony/var/logs/daily.output.log 2>/symfony/var/logs/daily.error.log

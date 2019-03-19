@@ -1,0 +1,28 @@
+[mysqld]
+innodb_file_per_table
+innodb_buffer_pool_load_at_startup=ON
+innodb_buffer_pool_dump_at_shutdown=ON
+innodb_buffer_pool_filename=dump-restore-innodb
+innodb_buffer_pool_size = 1G
+
+log-output = FILE
+
+#General Query Log
+general_log
+general_log_file        = /var/log/mysql/mysql_query.log
+
+#Error Log
+log_error               = /var/log/mysql/mysql_error.log
+
+#Slow Query Log
+slow_query_log          = 1
+slow_query_log_file     = /var/log/mysql/mysql_slow.log
+long_query_time         = 2
+log-queries-not-using-indexes
+
+max_connections = 1000
+max_allowed_packet=1073741824
+interactive_timeout=28800
+wait_timeout=28800
+
+lower_case_table_names=1

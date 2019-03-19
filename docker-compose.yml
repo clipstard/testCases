@@ -1,0 +1,30 @@
+version: '3'
+services:
+    nginx:
+        container_name: test-nginx
+        build:
+            context: ./docker/images/nginx
+        restart: always
+        ports:
+            - 83:80
+        links:
+            - php-fpm:php
+        networks:
+            app_subnet:
+                ipv4_address: 172.22.0.10
+
+    php-fpm:
+        container_name: test-php
+        build:
+            context: ./docker/images/php-fpm
+            args:
+                - INSTALL_XDEBUG=true
+                - XDEBUG_REMOTE_HOST=172.22.0.1
+                - XDEBUG_REMOTE_PORT=9000
+                - XDEBUG_IDE_KEY=total
+        restart: always
+        networks:
+            - app_subnet
+networks:
+    app_subnet:
+        external: true
