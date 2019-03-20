@@ -96,9 +96,9 @@ ENV XDEBUG_REMOTE_PORT ${XDEBUG_REMOTE_PORT}
 ENV XDEBUG_IDE_KEY ${XDEBUG_IDE_KEY}
 
 
-## Include the config files
-#COPY config/symfony.ini /usr/local/etc/php/conf.d/
-#COPY config/symfony.pool.conf /usr/local/etc/php-fpm.d/
+# Include the config files
+COPY config/symfony.ini /usr/local/etc/php/conf.d/
+COPY config/symfony.pool.conf /usr/local/etc/php-fpm.d/
 
 
 # Install nodejs (new version)

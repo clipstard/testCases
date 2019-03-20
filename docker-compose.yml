@@ -1,5 +1,6 @@
 version: '3'
 services:
+
     nginx:
         container_name: test-nginx
         build:
@@ -10,8 +11,9 @@ services:
         links:
             - php-fpm:php
         networks:
-            app_subnet:
-                ipv4_address: 172.22.0.10
+            - app_subnet
+        volumes:
+            - ./symfony:/symfony
 
     php-fpm:
         container_name: test-php
@@ -25,6 +27,12 @@ services:
         restart: always
         networks:
             - app_subnet
+        volumes:
+            - ./symfony:/symfony
+            - ./docker/volumes/php-fpm/var/log:/var/log
+        env_file:
+            - symfony/.env
+
 networks:
     app_subnet:
         external: true

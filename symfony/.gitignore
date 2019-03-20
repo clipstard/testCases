@@ -1,0 +1,69 @@
+app/config/parameters.yml
+build/
+phpunit.xml
+var/*
+!var/xml
+!var/cache
+var/cache/*
+!var/cache/.gitkeep
+!var/logs
+var/logs/*
+var/logs/prod/*
+!var/logs/prod/.gitkeep
+var/logs/dev/*
+var/logs/test/*
+!var/logs/.gitkeep
+!var/sessions
+var/sessions/*
+!var/sessions/.gitkeep
+!var/SymfonyRequirements.php
+vendor/
+web/bundles/
+**/.bash_history
+coverage/
+node_modules
+
+public/avatar/*
+public/logo/*
+public/resource/*
+public/qr_code/*
+public/card/*
+public/certificate/*
+public/certificate_template/*
+!public/certificate_template/default*
+public/question/*
+public/import/questions/*
+public/company/*
+
+**/*.php~
+.vagrant
+playbook.yml
+requirements.yml
+vagrantfile
+ansible-roles
+
+log
+
+.DS_Store
+###> symfony/framework-bundle ###
+.env
+public/bundles/
+var/
+vendor/
+###< symfony/framework-bundle ###
+
+###> phpunit/phpunit ###
+phpunit.xml
+###< phpunit/phpunit ###
+
+###> symfony/phpunit-bridge ###
+.phpunit
+phpunit.xml
+###< symfony/phpunit-bridge ###
+
+.env
+###> squizlabs/php_codesniffer ###
+.phpcs-cache
+phpcs.xml
+###< squizlabs/php_codesniffer ###
+.phpunit.result.cache
